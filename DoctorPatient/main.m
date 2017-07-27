@@ -7,11 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Doctor.h"
+#import "Patient.h"
+#import "Prescriptions.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        
+        Doctor *drMiller = [[Doctor alloc]initWithName:@"Dr. Miller" specialization:@"Physiotherapy"];
+        Patient *george = [[Patient alloc]initWithName:@"George" ID:YES];
+        
+        [george visitDoctor];
+        [drMiller acceptPatient:george healthCard:george.ID];
+        
+        [drMiller requestMedication:george];
+        
+        
     }
     return 0;
 }
